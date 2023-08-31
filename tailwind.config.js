@@ -22,6 +22,7 @@ module.exports = {
       meduim_white: "#FFFFFFDE",
       light_blue: '#8392A5',
       darK_border: "#BABDC0",
+      dark_blue: "#0C0C3C"
     },
     extend: {
       boxShadow: {

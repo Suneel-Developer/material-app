@@ -3,6 +3,8 @@ import NavbarLayout from "../components/NavbarLayout";
 import Breadcrumb from "../components/Breadcrumbs/Breadcrumb";
 import Button from "../components/Button";
 import Input from "../components/inputs/Input";
+import IconButton from "../components/IconButton";
+import { FiPlus } from "react-icons/fi";
 
 const ProjectOverview: React.FC = () => {
   return (
@@ -11,7 +13,11 @@ const ProjectOverview: React.FC = () => {
         <Breadcrumb pageName="Projects overview" />
         <div className="w-2/3">
           <div className="flex gap-3 mb-5">
-            <Button label="Create New" onClick={() => {}} />
+            <IconButton
+              icon={FiPlus}
+              text="Create New"
+              onClick={() => {}}
+            />
             <Button label="Auto Motion" onClick={() => {}} outline />
             <Button label="Project" onClick={() => {}} outline />
             <Button label="New automation" onClick={() => {}} outline />
@@ -20,7 +26,7 @@ const ProjectOverview: React.FC = () => {
 
           <div>
             <div className="col-span-1 bg-white shadow-boxShadow p-4 pr-0 my-2">
-              <h1 className="text-lg font-medium">New auto motion project</h1>
+              <h1 className="text-xl font-medium">New auto motion project</h1>
               <hr className=" text-dark_white my-2" />
 
               <div className="mt-7">
