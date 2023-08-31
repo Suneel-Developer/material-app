@@ -21,12 +21,16 @@ module.exports = {
       light_white: "#FFFFFF",
       meduim_white: "#FFFFFFDE",
       light_blue: '#8392A5',
-      darK_border: "#BABDC0",
-      dark_blue: "#0C0C3C"
+      dark_border: "#BABDC0",
+      dark_blue: "#0C0C3C",
+      light_grey: "#EFF4FA",
+      light_orange: "#FF9800",
+      popup_bg: "#0000008f"
     },
     extend: {
       boxShadow: {
         '3xl': '10px 30px 70px 0px rgba(0, 0, 0, 0.14)',
+        'custom': '0px 0px 14px 0px rgba(0, 0, 0, 0.06)',
       }
     },
   },
