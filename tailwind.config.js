@@ -14,6 +14,7 @@ module.exports = {
       dark_white: '#E0E0E0',
       grey: "#0000008A",
       dark_grey: "rgba(0, 0, 0, 0.42)",
+      grey_bg: "rgba(122, 21, 247, 0.08)",
       hover_bg: "#CCCCCC",
       error: "#F81414",
       light_black: "#000000DE",
@@ -25,11 +26,12 @@ module.exports = {
       dark_blue: "#0C0C3C",
       light_grey: "#EFF4FA",
       light_orange: "#FF9800",
-      popup_bg: "#0000008f"
+      popup_bg: "#0000008f",
+      black_text: "#212121"
     },
     extend: {
       boxShadow: {
-        '3xl': '10px 30px 70px 0px rgba(0, 0, 0, 0.14)',
+        'box_shadow': '10px 30px 70px 0px rgba(0, 0, 0, 0.14)',
         'custom': '0px 0px 14px 0px rgba(0, 0, 0, 0.06)',
       }
     },

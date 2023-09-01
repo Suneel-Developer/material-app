@@ -1,11 +1,13 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Breadcrumb from "../components/Breadcrumbs/Breadcrumb";
 import NavbarLayout from "../components/NavbarLayout";
 import { FiPlus } from "react-icons/fi";
 import Accordion from "../components/Accordion";
 
 const NewJobs: React.FC = () => {
+  const [openTab, setOpenTab] = useState(1);
+
   return (
     <NavbarLayout>
       <div className="px-2 md:px-7">
@@ -309,25 +311,100 @@ const NewJobs: React.FC = () => {
               Upload files to:
             </h1>
 
-            {/* Add and Remove  */}
-            <div className="flex items-center justify-start gap-4 mt-2">
-              {/* Add Input File  */}
-              <div>
-                <input type="file" id="file" className="hidden" />
-                <label
-                  htmlFor="file"
-                  className="cursor-pointer flex items-center gap-1 text-primary text-sm font-medium"
-                >
-                  <FiPlus />
-                  Add
-                </label>
-              </div>
+            {/* Tabs  */}
+              <div className="w-full">
+                <div className="text-center border-b border-light_blue">
+                  <ul className="flex flex-wrap -mb-px">
+                    <li>
+                      <a
+                        className={
+                          "inline-block pl-0 p-4 text-light_blue text-sm font-normal" +
+                          (openTab === 1
+                            ? "text-black_text font-semibold border-b-2 border-primary rounded-t-lg"
+                            : "")
+                        }
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setOpenTab(1);
+                        }}
+                        data-toggle="tab"
+                        href="#link1"
+                        role="tablist"
+                      >
+                        Overview
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        className={
+                          "inline-block p-4 text-light_blue text-sm font-normal" +
+                          (openTab === 2
+                            ? "text-black_text font-semibold border-b-2 border-primary rounded-t-lg"
+                            : "")
+                        }
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setOpenTab(2);
+                        }}
+                        data-toggle="tab"
+                        href="#link2"
+                        role="tablist"
+                      >
+                        Shared with me
+                      </a>
+                    </li>
+                  </ul>
+                </div>
 
-              {/*  Remove  */}
-              <button className="border-none text-sm font-medium text-error">
-                Remove
-              </button>
-            </div>
+                <div className="relative flex flex-col mt-5 min-w-0 break-words">
+                  <div
+                    className={openTab === 1 ? "block" : "hidden"}
+                    id="link1"
+                  >
+                    <div className="text-dark_border">
+                      <label
+                        htmlFor="title"
+                        className="block font-normal text-base pb-2"
+                      >
+                        Folder:
+                      </label>
+
+                      <select className=" placeholder:text-dark_border resize-none rounded-md placeholder:text-sm border border-dark_border outline-none w-full	px-2 py-3 text-dark_border">
+                        <option value="option1">Browse File</option>
+                        <option value="option1">Type</option>
+                        <option value="option1">Type</option>
+                      </select>
+                    </div>
+
+                    {/* Add and Remove  */}
+                    <div className="flex items-center justify-start gap-4 mt-2">
+                      {/* Add Input File  */}
+                      <div>
+                        <input type="file" id="file" className="hidden" />
+                        <label
+                          htmlFor="file"
+                          className="cursor-pointer flex items-center gap-1 text-primary text-sm font-medium"
+                        >
+                          <FiPlus />
+                          Add
+                        </label>
+                      </div>
+
+                      {/*  Remove  */}
+                      <button className="border-none text-sm font-medium text-error">
+                        Remove
+                      </button>
+                    </div>
+                  </div>
+
+                  <div
+                    className={openTab === 2 ? "block" : "hidden"}
+                    id="link2"
+                  >
+                    Tabe2
+                  </div>
+                </div>
+              </div>
           </div>
         </div>
 
