@@ -18,7 +18,7 @@ const Notification = () => {
     setIsPopupOpen(false);
   };
 
-  const [openTab, setOpenTab] = React.useState(1);
+  const [openTab, setOpenTab] = useState(1);
   return (
     <NavbarLayout>
       <div className="px-2 md:px-7">

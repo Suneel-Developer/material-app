@@ -3,7 +3,7 @@ import { RiDeleteBinLine } from "react-icons/ri";
 import { MdOutlineEdit } from "react-icons/md";
 import { FiPlus } from "react-icons/fi";
 
-const Download = () => {
+const DownloadTable = () => {
   return (
     <div>
       <table className="border border-dark_border text-dark_border font-normal">
@@ -82,4 +82,4 @@ const Download = () => {
   );
 };
 
-export default Download;
+export default DownloadTable;
