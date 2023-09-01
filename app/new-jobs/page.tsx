@@ -4,6 +4,8 @@ import Breadcrumb from "../components/Breadcrumbs/Breadcrumb";
 import NavbarLayout from "../components/NavbarLayout";
 import { FiPlus } from "react-icons/fi";
 import Accordion from "../components/Accordion";
+import Download from "./download";
+import Upload from "./Upload";
 
 const NewJobs: React.FC = () => {
   const [openTab, setOpenTab] = useState(1);
@@ -146,12 +148,12 @@ const NewJobs: React.FC = () => {
           </div>
 
           {/* Folder Input */}
-          <div className="w-full p-3">
+          <div className="w-full p-3 flex flex-col items-center">
             <h1 className="text-dark_blue text-lg font-semibold	 my-4">
               Download files to:
             </h1>
 
-            <div className="text-dark_border">
+            {/* <div className="text-dark_border w-full">
               <label
                 htmlFor="title"
                 className="block font-normal text-base pb-2"
@@ -159,16 +161,16 @@ const NewJobs: React.FC = () => {
                 Folder:
               </label>
 
-              <select className=" placeholder:text-dark_border resize-none rounded-md placeholder:text-sm border border-dark_border outline-none w-full	px-2 py-3 text-dark_border">
+              <select className="w-full placeholder:text-dark_border resize-none rounded-md placeholder:text-sm border border-dark_border outline-none	px-2 py-3 text-dark_border">
                 <option value="option1">Browse File</option>
                 <option value="option1">Type</option>
                 <option value="option1">Type</option>
               </select>
-            </div>
+            </div> */}
 
             {/* Add and Remove  */}
-            <div className="flex items-center justify-start gap-4 mt-2">
               {/* Add Input File  */}
+            {/* <div className="flex items-center justify-start gap-4 mt-2 w-full">
               <div>
                 <input type="file" id="file" className="hidden" />
                 <label
@@ -180,11 +182,11 @@ const NewJobs: React.FC = () => {
                 </label>
               </div>
 
-              {/*  Remove  */}
               <button className="border-none text-sm font-medium text-error">
                 Remove
               </button>
-            </div>
+            </div> */}
+            <Download />
           </div>
         </div>
 
@@ -312,7 +314,7 @@ const NewJobs: React.FC = () => {
             </h1>
 
             {/* Tabs  */}
-              <div className="w-full">
+              {/* <div className="w-full">
                 <div className="text-center border-b border-light_blue">
                   <ul className="flex flex-wrap -mb-px">
                     <li>
@@ -376,9 +378,7 @@ const NewJobs: React.FC = () => {
                       </select>
                     </div>
 
-                    {/* Add and Remove  */}
                     <div className="flex items-center justify-start gap-4 mt-2">
-                      {/* Add Input File  */}
                       <div>
                         <input type="file" id="file" className="hidden" />
                         <label
@@ -390,7 +390,6 @@ const NewJobs: React.FC = () => {
                         </label>
                       </div>
 
-                      {/*  Remove  */}
                       <button className="border-none text-sm font-medium text-error">
                         Remove
                       </button>
@@ -404,7 +403,8 @@ const NewJobs: React.FC = () => {
                     Tabe2
                   </div>
                 </div>
-              </div>
+              </div> */}
+              <Upload />
           </div>
         </div>
 
