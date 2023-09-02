@@ -2,7 +2,10 @@
 import React, { useState } from "react";
 import { FiPlus } from "react-icons/fi";
 
-const UplaodTabs = () => {
+interface UplaodTabsProps {
+  onChange: () => void;
+}
+const UplaodTabs: React.FC<UplaodTabsProps> = ({ onChange }) => {
   const [openTab, setOpenTab] = useState(1);
 
   return (
@@ -57,7 +60,7 @@ const UplaodTabs = () => {
               Folder:
             </label>
 
-            <select className=" placeholder:text-dark_border resize-none rounded-md placeholder:text-sm border border-dark_border outline-none w-full	px-2 py-3 text-dark_border">
+            <select onChange={onChange} className=" placeholder:text-dark_border resize-none rounded-md placeholder:text-sm border border-dark_border outline-none w-full	px-2 py-3 text-dark_border">
               <option value="option1">Browse File</option>
               <option value="option1">Type</option>
               <option value="option1">Type</option>

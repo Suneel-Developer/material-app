@@ -14,6 +14,8 @@ import TextArea from "../components/inputs/TextArea";
 import Label from "../components/Label";
 const NewJobs: React.FC = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [downloadTo, setDownloadTo] = useState(false);
+  const [uploadTo, setUploadTo] = useState(false);
 
   const openPopup = () => {
     setIsPopupOpen(true);
@@ -21,6 +23,14 @@ const NewJobs: React.FC = () => {
 
   const closePopup = () => {
     setIsPopupOpen(false);
+  };
+
+  const handleChangeDownload = () => {
+    setDownloadTo(true);
+  };
+
+  const handleChangeUpload = () => {
+    setUploadTo(true);
   };
   return (
     <NavbarLayout>
@@ -117,9 +127,11 @@ const NewJobs: React.FC = () => {
             <h1 className="text-dark_blue text-lg font-semibold	 my-4">
               Download files to:
             </h1>
-
-            <Downlaod />
-            {/* <DownloadTable /> */}
+            {downloadTo ? (
+              <DownloadTable />
+            ) : (
+              <Downlaod onChange={() => handleChangeDownload()} />
+            )}
           </div>
         </div>
 
@@ -203,8 +215,12 @@ const NewJobs: React.FC = () => {
               Upload files to:
             </h1>
 
-            <UplaodTabs />
-            {/* <Upload /> */}
+            {uploadTo ? (
+              <Upload />
+            ) : (
+              <UplaodTabs onChange={() => handleChangeUpload()} />
+            )}
+             
           </div>
         </div>
 

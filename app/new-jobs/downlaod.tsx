@@ -1,7 +1,9 @@
 import React from "react";
 import { FiPlus } from "react-icons/fi";
-
-const Downlaod = () => {
+interface DownloadProps {
+  onChange: () => void;
+}
+const Downlaod: React.FC<DownloadProps> = ({ onChange }) => {
   return (
     <div className="w-full">
       <div className="text-dark_border w-full">
@@ -9,7 +11,7 @@ const Downlaod = () => {
           Folder:
         </label>
 
-        <select className="w-full placeholder:text-dark_border resize-none rounded-md placeholder:text-sm border border-dark_border outline-none	px-2 py-3 text-dark_border">
+        <select onChange={onChange} className="w-full placeholder:text-dark_border resize-none rounded-md placeholder:text-sm border border-dark_border outline-none	px-2 py-3 text-dark_border">
           <option value="option1">Browse File</option>
           <option value="option1">Type</option>
           <option value="option1">Type</option>
