@@ -90,16 +90,16 @@ const Card: React.FC<CardProps> = ({ title }) => {
    
         <div className="flex-auto px-0 pt-0 pb-2">
           <div className="p-0 overflow-x-auto">
-            <table className="items-center w-full mb-0 align-top border-dark_grey ">
+            <table className="items-center w-full mb-0 align-top border-light_gray ">
               <thead className="align-bottom">
                 <tr>
-                  <th className="py-3 font-medium text-left bg-transparent border-b border-dark_grey  border-b-solid tracking-none whitespace-nowra">
+                  <th className="py-3 font-medium text-left bg-transparent border-b border-light_gray  border-b-solid tracking-none whitespace-nowra">
                   Source
                   </th>
-                  <th className="py-3 font-medium text-left bg-transparent border-b border-dark_grey  border-b-solid tracking-none whitespace-nowra">
+                  <th className="py-3 font-medium text-left bg-transparent border-b border-light_gray  border-b-solid tracking-none whitespace-nowra">
                   Revenue
                   </th>
-                  <th className="py-3 font-medium text-left bg-transparent border-b border-dark_grey  border-b-solid tracking-none whitespace-nowra">
+                  <th className="py-3 font-medium text-left bg-transparent border-b border-light_gray  border-b-solid tracking-none whitespace-nowra">
                   Value
                   </th>
                 </tr>
@@ -107,13 +107,13 @@ const Card: React.FC<CardProps> = ({ title }) => {
               <tbody>  {[0, 1, 2].map((v, i) => {
                   return (
                     <tr>
-                      <td className="py-3  align-middle bg-transparent border-b  border-dark_grey whitespace-nowrap ">
+                      <td className="py-3  align-middle bg-transparent border-b  border-light_gray whitespace-nowrap ">
                         <span className=" leading-tight ">Social </span>
                       </td>
-                      <td className="py-3  align-middle bg-transparent border-b border-dark_grey whitespace-nowrap ">
+                      <td className="py-3  align-middle bg-transparent border-b border-light_gray whitespace-nowrap ">
                         <span className=" leading-tight ">270 </span>
                       </td>
-                      <td className="py-3  align-middle bg-transparent border-b border-dark_grey whitespace-nowrap ">
+                      <td className="py-3  align-middle bg-transparent border-b border-light_gray whitespace-nowrap ">
                         <span className=" leading-tight ">+35% </span>
                       </td>
                     </tr>

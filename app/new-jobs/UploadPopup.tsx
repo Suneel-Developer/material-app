@@ -1,7 +1,6 @@
 "use client";
-import Link from "next/link";
 import { RxCross2 } from "react-icons/rx";
-
+import Button from "../components/Button"
 interface UserPopupProps {
   onClose: () => void;
 }
@@ -48,15 +47,15 @@ const UploadPopup: React.FC<UserPopupProps> = ({ onClose }) => {
         </div>
 
         <div className="flex my-3 gap-3">
-          <button className="bg-primary rounded-md text-white text-xs py-3 px-5">
-            Submit
-          </button>
-          <button className="text-light_blue font-semibold text-xs mr-3" onClick={onClose}>
-            Cancel
-          </button>
+          <Button  label="Submit"
+  onClick={()=>{}} small/>
+         
+            <Button  label="Cancels" textbutton
+  onClick={()=>{}} small/>
+     
         </div>
       </div>
-    </div>
+    </div>  
   );
 };
 

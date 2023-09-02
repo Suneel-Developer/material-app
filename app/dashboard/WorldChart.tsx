@@ -1,104 +1,39 @@
 "use client";
 import React from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import dynamic from "next/dynamic";
-const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
-// import Chart from 'react-apexcharts'
+import {
+  ComposableMap,
+  Geographies,
+  Geography,
+  Marker,
+} from "react-simple-maps";
+import Data from "./features.json";
 interface CardProps {
   title: string;
+  mapName: string;
+  width: number;
+  height: number;
+}
+
+interface MarkerInfo {
+  markerOffset: number;
+  name: string;
+  coordinates: [number, number]; // Specify the coordinates type as a tuple
 }
 
 const Card: React.FC<CardProps> = ({ title }) => {
-  const [month, setMonth] = React.useState("1");
-
-  const handleChange = (event: any) => {
-    setMonth(event.target.value);
-  };
-
-  // chart color
-  const primary = "#5D87FF";
-  const secondary = "#49BEFF";
-
-  // chart
-  const optionscolumnchart: any = {
-    chart: {
-      type: "bar",
-      fontFamily: "'Plus Jakarta Sans', sans-serif;",
-      foreColor: "#adb0bb",
-      toolbar: {
-        show: false,
-      },
-      height: 220,
-    },
-    colors: [primary, secondary],
-    plotOptions: {
-      bar: {
-        horizontal: false,
-        barHeight: "50%",
-        columnWidth: "42%",
-        borderRadius: [0],
-        borderRadiusApplication: "end",
-        borderRadiusWhenStacked: "all",
-      },
-    },
-
-    stroke: {
-      show: true,
-      width: 5,
-      lineCap: "butt",
-      colors: ["transparent"],
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    legend: {
-      show: false,
-    },
-    grid: {
-      borderColor: "rgba(0,0,0,0.1)",
-      strokeDashArray: 3,
-      xaxis: {
-        lines: {
-          show: false,
-        },
-      },
-    },
-    yaxis: {
-      tickAmount: 4,
-    },
-    xaxis: {
-      categories: [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
-      ],
-      axisBorder: {
-        show: false,
-      },
-    },
-    tooltip: {
-      theme: "light",
-      fillSeriesColor: false,
-    },
-  };
-  const seriescolumnchart: any = [
+  const markers: MarkerInfo[] = [
     {
-      name: "Eanings this month",
-      data: [355, 390, 300, 350, 390, 180, 355, 390, 390, 180, 355, 390],
+      markerOffset: -15,
+      name: "Buenos Aires",
+      coordinates: [-58.3816, -34.6037],
     },
-    {
-      name: "Expense this month",
-      data: [220, 220, 325, 215, 220, 310, 220, 220, 390, 180, 355, 390],
-    },
+    { markerOffset: -15, name: "La Paz", coordinates: [-68.1193, -16.4897] },
+    { markerOffset: 25, name: "Brasilia", coordinates: [-47.8825, -15.7942] },
+    { markerOffset: 25, name: "Santiago", coordinates: [-70.6693, -33.4489] },
+    { markerOffset: 25, name: "Bogota", coordinates: [-74.0721, 4.711] },
+    { markerOffset: 25, name: "Quito", coordinates: [-78.4678, -0.1807] },
+    { markerOffset: -15, name: "Georgetown", coordinates: [-58.1551, 6.8013] },
   ];
 
   return (
@@ -107,13 +42,27 @@ const Card: React.FC<CardProps> = ({ title }) => {
         <p className="font-medium">{title}</p>
         <BsThreeDotsVertical />
       </div>
-
-      <Chart
-        options={optionscolumnchart}
-        series={seriescolumnchart}
-        type="bar"
-        height="220px"
-      />
+      <div className="flex justify-center">
+        <ComposableMap style={{ maxHeight: "440" }}>
+          <Geographies geography={Data}>
+            {({ geographies }) =>
+              geographies.map((geo) => (
+                <Geography key={geo.rsmKey} geography={geo} />
+              ))
+            }
+          </Geographies>
+          {markers.map((v,i) => (
+            <Marker key={i} coordinates={v.coordinates}>
+              <circle
+                r={10}
+                fill="#0089e9"
+                stroke="#0089e975"
+                strokeWidth={2}
+              />
+            </Marker>
+          ))}
+        </ComposableMap>
+      </div>
     </div>
   );
 };

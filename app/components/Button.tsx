@@ -9,6 +9,7 @@ interface ButtonProps {
   outline?: boolean;
   small?: boolean;
   icon?: IconType;
+  textbutton?: boolean
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -18,6 +19,7 @@ const Button: React.FC<ButtonProps> = ({
   outline = false,
   small,
   icon: Icon,
+  textbutton
 }) => {
   return (
     <button
@@ -31,8 +33,12 @@ const Button: React.FC<ButtonProps> = ({
         hover:opacity-80
         transition
         w-full
-        ${outline ? "bg-transparent" : "bg-primary"}
-        ${outline ? "border-primary" : "border-primary"}
+        text-xs md:text-lg 
+        bg-primary 
+        border-primary
+        ${textbutton ? "bg-white text-[#000000] border-none" : ""}
+        ${outline ? "bg-white" : ""}
+        ${outline ? "border-primary" : ""}
         ${outline ? "text-primary" : "text-white"}
         ${small ? "text-sm" : "text-md"}
         ${small ? "py-1" : "py-3"}

@@ -3,6 +3,7 @@ import { BiCaretDown } from "react-icons/bi";
 
 interface AccordionProps {
   title: string;
+  children: React.ReactNode
 }
 
 const Accordion: React.FC<AccordionProps> = ({ title, children }) => {

@@ -1,19 +1,23 @@
-// components/NavbarLayout.tsx
-import React, { ReactNode } from "react";
+import React, { ReactNode, useState } from "react";
 import Navbar from "./navbar/navbar";
 import Sidebar from "./sidebar/sidebar";
+
 interface NavbarLayoutProps {
   children: ReactNode;
 }
 
 const NavbarLayout: React.FC<NavbarLayoutProps> = ({ children }) => {
+  const [open, setOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setOpen(!open);
+  };
+
   return (
     <div className="flex">
-      <div>
-        <Sidebar />
-      </div>
+      <Sidebar isopen={open} />
       <div className="flex-1">
-        <Navbar />
+        <Navbar toggleSidebar={toggleSidebar} />
         <div>{children}</div>
       </div>
     </div>

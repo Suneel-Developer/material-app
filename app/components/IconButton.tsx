@@ -7,6 +7,7 @@ interface ButtonProps {
   disabled?: boolean;
   icon?: IconType;
   text?: string;
+  filled?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -14,6 +15,7 @@ const Button: React.FC<ButtonProps> = ({
   disabled,
   icon: Icon,
   text,
+  filled,
 }) => {
   return (
     <button
@@ -27,19 +29,21 @@ const Button: React.FC<ButtonProps> = ({
         hover:opacity-80
         transition
         flex
-        
         items-center
         justify-center
-        bg-primary
-        text-white
         gap-2
         text-sm
-        
         py-2
         w-full
+        ${filled ? "bg-primary" : ""}
         `}
     >
-      {Icon && <Icon size={24} className="text-white" />}
+      {Icon && (
+        <Icon
+          size={24}
+          className={`${filled ? "text-white" : "text-dark_grey"}`}
+        />
+      )}
       {text}
     </button>
   );

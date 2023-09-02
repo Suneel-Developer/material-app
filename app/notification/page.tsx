@@ -6,7 +6,12 @@ import Overview from "./Overview";
 import { AiOutlineSetting } from "react-icons/ai";
 import Link from "next/link";
 import NotificationPopup from "./NotificationPopup";
-
+import Card from "../dashboard/Card";
+import BarChart from "../dashboard/BarChart";
+import Source from "../dashboard/Source";
+import TableOne from "../dashboard/TableOne";
+import TableTwo from "../dashboard/TableTwo";
+import LineChart from "./LineChart";
 const Notification = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
@@ -25,7 +30,7 @@ const Notification = () => {
         <Breadcrumb pageName="Notification" />
 
         {/* Notifications  */}
-        <div className="bg-grey_bg p-2 py-4 w-4/5 rounded-2xl flex justify-between mb-4 items-center gap-2">
+        <div className="bg-grey_bg p-2 py-4 md:md:w-4/5 rounded-2xl flex justify-between mb-4 items-center gap-2">
           <div className="flex items-center">
             <span className="text-xs">
               <b className="font-semibold"> 🔔 Turn on push notifications</b> to
@@ -47,7 +52,7 @@ const Notification = () => {
         </div>
 
         {/* Heading and Icon  */}
-        <div className="flex justify-between items-center w-4/5 ">
+        <div className="flex justify-between items-center md:w-4/5 ">
           <h1 className=" text-dark_blue font-semibold text-2xl">
             Notification
           </h1>
@@ -55,7 +60,7 @@ const Notification = () => {
         </div>
 
         {/* Tabs  */}
-        <div className="flex flex-wrap w-4/5 mt-3">
+        <div className="flex flex-wrap md:w-4/5 mt-3">
           <div className="w-full">
             <div className="text-center border-b border-light_blue">
               <ul className="flex flex-wrap -mb-px">
@@ -127,7 +132,18 @@ const Notification = () => {
                 Tabe2
               </div>
               <div className={openTab === 3 ? "block" : "hidden"} id="link3">
-                tab3
+                <div className="grid grid-cols-1 md:grid-cols-3 py-4 gap-4">
+                  <div className="md:col-span-2">
+                    <LineChart title="Card Title" />
+                  </div>
+                  <div className="col-span-1">
+                    <Source title="Source/Medium" />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 py-4  gap-4">
+                  <BarChart title="Card Title" />
+                </div>
               </div>
             </div>
           </div>

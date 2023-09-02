@@ -27,7 +27,9 @@ module.exports = {
       light_grey: "#EFF4FA",
       light_orange: "#FF9800",
       popup_bg: "#0000008f",
-      black_text: "#212121"
+      black_text: "#212121",
+
+      light_gray: "#E0E0E0"
     },
     extend: {
       boxShadow: {

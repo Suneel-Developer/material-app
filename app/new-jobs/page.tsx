@@ -9,7 +9,9 @@ import UplaodTabs from "./Uplaodtabs";
 import DownloadTable from "./Downloadtable";
 import Downlaod from "./downlaod";
 import UploadPopup from "./UploadPopup";
-
+import InputOutline from "../components/inputs/InputOutline";
+import TextArea from "../components/inputs/TextArea";
+import Label from "../components/Label";
 const NewJobs: React.FC = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
@@ -30,16 +32,12 @@ const NewJobs: React.FC = () => {
           <div className="w-full p-3 ">
             {/* Title  */}
             <div>
-              <label
-                htmlFor="title"
-                className="block text-primary font-medium text-base pb-2"
-              >
-                Tittle:
-              </label>
-              <input
+              <Label text="Title" primary />
+              <InputOutline
+                id="tittle"
+                label="Tittle goes here"
                 type="text"
-                placeholder="Tittle goes here"
-                className=" placeholder:text-primary rounded-md placeholder:text-sm border border-primary	px-2 py-3 text-primary w-full"
+                piramary
               />
             </div>
 
@@ -51,76 +49,33 @@ const NewJobs: React.FC = () => {
               {/* Host Name & Port Number */}
               <div className="w-full flex gap-3 text-dark_border mb-4">
                 <div className="w-2/3">
-                  <label
-                    htmlFor="hostName"
-                    className="block font-normal text-base pb-2"
-                  >
-                    Host Name:
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Host Name:"
-                    className=" rounded-md placeholder:text-sm border border-darK_border	px-2 py-3 w-full"
-                  />
+                  <Label text="Host Name:" />
+                  <InputOutline id="tittle" label="Host Name:" type="text" />
                 </div>
 
                 <div className="w-2/3 ">
-                  <label
-                    htmlFor="portnumber"
-                    className="block font-normal text-base pb-2"
-                  >
-                    Port number:
-                  </label>
-                  <input
-                    type="text"
-                    className=" placeholder:text-darK_border rounded-md placeholder:text-sm border border-darK_border	px-2 py-3 text-darK_border w-full"
-                  />
+                  <Label text="Port number:" />
+                  <InputOutline id="tittle" label="Port number" type="text" />
                 </div>
               </div>
 
               {/* User Name & Password */}
               <div className="w-full flex gap-3 text-dark_border mb-4">
                 <div className="w-2/3">
-                  <label
-                    htmlFor="userName"
-                    className="block font-normal text-base pb-2"
-                  >
-                    User Name:
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="User Name:"
-                    className=" rounded-md placeholder:text-sm border border-darK_border	px-2 py-3 w-full"
-                  />
+                  <Label text="User Name:" />
+                  <InputOutline id="tittle" label="User Name" type="text" />
                 </div>
 
                 <div className="w-2/3 ">
-                  <label
-                    htmlFor="password"
-                    className="block font-normal text-base pb-2"
-                  >
-                    Password:
-                  </label>
-                  <input
-                    type="password"
-                    className=" placeholder:text-darK_border rounded-md placeholder:text-sm border border-darK_border	px-2 py-3 text-darK_border w-full"
-                  />
+                  <Label text="Password:" />
+                  <InputOutline id="tittle" label="Password" type="password" />
                 </div>
               </div>
 
               {/* SSH Key */}
               <div className="w-full text-dark_border mb-4">
-                <label
-                  htmlFor="key"
-                  className="block font-normal text-base pb-2"
-                >
-                  SSH Key:
-                </label>
-                <input
-                  type="text"
-                  placeholder="SSH Key"
-                  className=" rounded-md placeholder:text-sm border border-darK_border	px-2 py-3 w-full"
-                />
+                <Label text="SSH Key:" />
+                <InputOutline id="tittle" label="SSH Key" type="text" />
               </div>
 
               {/* input type file */}
@@ -139,7 +94,10 @@ const NewJobs: React.FC = () => {
                 <span className="text-primary text-lg font-medium">-</span>
 
                 <div>
-                  <h2 className="cursor-pointer flex items-center gap-1 text-primary text-sm font-medium" onClick={openPopup}>
+                  <h2
+                    className="cursor-pointer flex items-center gap-1 text-primary text-sm font-medium"
+                    onClick={openPopup}
+                  >
                     <FiPlus />
                     Add Folder
                   </h2>
@@ -176,76 +134,33 @@ const NewJobs: React.FC = () => {
               {/* Host Name & Port Number */}
               <div className="w-full flex gap-3 text-dark_border mb-4">
                 <div className="w-2/3">
-                  <label
-                    htmlFor="hostName"
-                    className="block font-normal text-base pb-2"
-                  >
-                    Host Name:
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Host Name:"
-                    className=" rounded-md placeholder:text-sm border border-darK_border	px-2 py-3 w-full"
-                  />
+                  <Label text="Host Name:" />
+                  <InputOutline id="tittle" label="Host Name:" type="text" />
                 </div>
 
                 <div className="w-2/3 ">
-                  <label
-                    htmlFor="portnumber"
-                    className="block font-normal text-base pb-2"
-                  >
-                    Port number:
-                  </label>
-                  <input
-                    type="text"
-                    className=" placeholder:text-darK_border rounded-md placeholder:text-sm border border-darK_border	px-2 py-3 text-darK_border w-full"
-                  />
+                  <Label text="Port number:" />
+                  <InputOutline id="tittle" label="Port number" type="text" />
                 </div>
               </div>
 
               {/* User Name & Password */}
               <div className="w-full flex gap-3 text-dark_border mb-4">
                 <div className="w-2/3">
-                  <label
-                    htmlFor="userName"
-                    className="block font-normal text-base pb-2"
-                  >
-                    User Name:
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="User Name:"
-                    className=" rounded-md placeholder:text-sm border border-darK_border	px-2 py-3 w-full"
-                  />
+                  <Label text="User Name:" />
+                  <InputOutline id="tittle" label="User Name" type="text" />
                 </div>
 
                 <div className="w-2/3 ">
-                  <label
-                    htmlFor="password"
-                    className="block font-normal text-base pb-2"
-                  >
-                    Password:
-                  </label>
-                  <input
-                    type="password"
-                    className=" placeholder:text-darK_border rounded-md placeholder:text-sm border border-darK_border	px-2 py-3 text-darK_border w-full"
-                  />
+                  <Label text="Password:" />
+                  <InputOutline id="tittle" label="Password" type="password" />
                 </div>
               </div>
 
               {/* SSH Key */}
               <div className="w-full text-dark_border mb-4">
-                <label
-                  htmlFor="key"
-                  className="block font-normal text-base pb-2"
-                >
-                  SSH Key:
-                </label>
-                <input
-                  type="text"
-                  placeholder="SSH Key"
-                  className=" rounded-md placeholder:text-sm border border-darK_border	px-2 py-3 w-full"
-                />
+                <Label text="SSH Key:" />
+                <InputOutline id="tittle" label="SSH Key" type="text" />
               </div>
 
               {/* input type file */}
@@ -298,11 +213,7 @@ const NewJobs: React.FC = () => {
           <Accordion title="Change file:">
             {/* file name */}
             <div className="w-1/2 text-dark_border mb-4">
-              <input
-                type="text"
-                placeholder="file name"
-                className=" rounded-md placeholder:text-sm border border-darK_border	px-2 py-3 w-full"
-              />
+              <InputOutline id="filename" label="File Name" type="text" />
             </div>
 
             {/* input type file */}
